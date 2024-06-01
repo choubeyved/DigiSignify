@@ -28,12 +28,11 @@ export const SignaturePad: React.FC = () => {
           <Typography variant="h4" gutterBottom> Digital Signature </Typography>
             </Box>
         <Box
-          sx={{border: '2px dashed grey',borderRadius: '8px',padding: '16px',backgroundColor: '#f5f5f5',
-            width: '100%', maxWidth: '520px',display: 'flex',justifyContent: 'center', alignItems: 'center',}} >
+          sx={{border: '2px dashed grey',borderRadius: '8px',backgroundColor: '#f5f5f5',
+            width: '100%', maxWidth: '520px',height:200}} >
 
           <SignatureCanvas ref={sigCanvas} penColor="black"
-            canvasProps={{width: '100%',height: 200,className: 'sigCanvas',style: { maxWidth: 500 }, 
-            }} />
+            canvasProps={{style:{width: '100%',height:"100%",}  }} />
         </Box>
         <Box sx={{ display: 'flex', gap: 2, mt: 2 }}>
           <Button variant="contained" color="primary" onClick={clear}>Clear</Button>
@@ -43,8 +42,6 @@ export const SignaturePad: React.FC = () => {
     </>
   );
 };
-
-
 
 
 
