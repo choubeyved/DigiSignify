@@ -2,13 +2,34 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { BrowserRouter } from 'react-router-dom';
+import { CssBaseline } from '@mui/material';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+const theme = createTheme(
+  {
+    palette:{
+      primary:{
+        main:"#1B3A57",
+      },
+      secondary:{
+        main:"#FFFFFF"
+      },
+     },
+  } )
+
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+    </BrowserRouter>
+    
   </React.StrictMode>
 );
 
